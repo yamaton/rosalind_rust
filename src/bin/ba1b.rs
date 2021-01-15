@@ -47,7 +47,9 @@ pub fn most_frequent(text: &[u8], k: usize) -> Vec<String> {
 fn test_ba1b() {
     let seq = b"ACGTTGCATGTCGCATGATGCATGAGAGCT";
     let k = 4;
-    assert_eq!(most_frequent(seq, k), vec!["CATG", "GCAT"]);
+    let mut res = most_frequent(seq, k);
+    res.sort();
+    assert_eq!(res, vec!["CATG", "GCAT"]);
 }
 
 #[derive(StructOpt)]
