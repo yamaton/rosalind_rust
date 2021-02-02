@@ -8,7 +8,7 @@ Input file should contain two lines; the first is a text, and the second is a pa
 
 */
 extern crate rosalind_rust;
-
+use rosalind_rust::Cli;
 use std::io::{prelude::*, BufReader};
 use structopt::StructOpt;
 
@@ -22,12 +22,6 @@ fn test_ba1a() {
     let seq = b"GCGCG";
     let pat = b"GCG";
     assert_eq!(pattern_count(seq, pat), 2);
-}
-
-#[derive(StructOpt)]
-struct Cli {
-    #[structopt(parse(from_os_str))]
-    path: std::path::PathBuf,
 }
 
 fn main() -> std::io::Result<()> {

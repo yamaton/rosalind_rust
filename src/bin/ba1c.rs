@@ -11,6 +11,7 @@ ACCGGGTTTT
 */
 
 extern crate rosalind_rust;
+use rosalind_rust::Cli;
 use std::io::{prelude::*, BufReader};
 use structopt::StructOpt;
 
@@ -31,12 +32,6 @@ fn revcomp(s: &str) -> String {
 fn test_ba1c() {
     let seq = String::from("AAAACCCGGT");
     assert_eq!(revcomp(&seq), String::from("ACCGGGTTTT"));
-}
-
-#[derive(StructOpt)]
-struct Cli {
-    #[structopt(parse(from_os_str))]
-    path: std::path::PathBuf,
 }
 
 fn main() -> std::io::Result<()> {

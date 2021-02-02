@@ -12,13 +12,11 @@ CATG GCAT
 
 */
 
-
 extern crate rosalind_rust;
-
+use rosalind_rust::Cli;
 use std::collections::HashMap;
 use std::io::{prelude::*, BufReader};
 use structopt::StructOpt;
-
 
 // https://github.com/dib-lab/bioinf_algorithms/
 
@@ -50,12 +48,6 @@ fn test_ba1b() {
     let mut res = most_frequent(seq, k);
     res.sort();
     assert_eq!(res, vec!["CATG", "GCAT"]);
-}
-
-#[derive(StructOpt)]
-struct Cli {
-    #[structopt(parse(from_os_str))]
-    path: std::path::PathBuf,
 }
 
 fn main() -> std::io::Result<()> {
